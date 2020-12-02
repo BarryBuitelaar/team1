@@ -28,7 +28,7 @@
 
     <?php
 
-      $database = new PDO('mysql:host=HOSTNAME;dbname=rds01', 'admin', 'PASSWORD');
+      $database = new PDO('mysql:host=rds01-dev-cluster.cluster-catscrpxxje2.eu-west-1.rds.amazonaws.com;dbname=rds01', 'admin', 'admin1234');
 
       $statement = $database->query('SELECT * FROM `teams`');
 
