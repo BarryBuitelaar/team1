@@ -27,18 +27,14 @@
   <body>
 
     <?php
-
-      $database = new PDO('mysql:host=rds01-dev-cluster.cluster-catscrpxxje2.eu-west-1.rds.amazonaws.com;dbname=rds01', 'admin', 'admin1234');
-
+      $database = new PDO('mysql:host=HOSTNAME;dbname=rds01', 'admin', 'PASSWORD');
       $statement = $database->query('SELECT * FROM `teams`');
-
       foreach ($statement->fetchAll() as $row) {
           echo sprintf('<h1>%s</h1>', $row['team_name']);
       }
-      
     ?>
   
-    <p>Als het goed is zie je hier boven de juiste team naam. Dit wordt uit de Aurora Serverless database gehaald.</p>
+    <p>Als het goed is zie je hier de naam van je team. Dit wordt uit de Aurora Serverless database gehaald.</p>
 
     <img src="docker-logo.jpg" alt="Docker Logo">
   
